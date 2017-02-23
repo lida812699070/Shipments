@@ -2,6 +2,7 @@ package com.example.ok.shipments;
 
 public class BaseSettings {
     public static final String EXTRA_BLUETOOTH_DEVICE_ADDRESS = "Bluetooth Device Adrress";
+    public static final String EXTRA_BLUETOOTH_DEVICE_ADDRESS1 = "1Bluetooth Device Adrress";
     public static final String EXTRA_BLUETOOTH_DEVICE_NAME = "Bluetooth Device Name";
     public static final String plaseUrl = "http://api.map.baidu.com/place/v2/search?query=";
     public static final String plaseUrlParameter = "&page_size=6&page_num=0&scope=1&region=深圳&output=json&ak=sfuQIH09bvPcDELFp0vIkyQ0nGRd07Tw";
