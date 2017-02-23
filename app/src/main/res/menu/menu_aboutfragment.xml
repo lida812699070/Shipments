@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_day"
+        android:orderInCategory="80"
+        android:title="24小时"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_weekday"
+        android:orderInCategory="90"
+        android:title="一个星期"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_monthday"
+        android:orderInCategory="100"
+        android:title="一个月"
+        app:showAsAction="never" />
+</menu>

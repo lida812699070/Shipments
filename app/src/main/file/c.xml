@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QueryResultOfShippingTraceData xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xsjky.cn/">
+    <ReturnCode>0</ReturnCode>
+    <ReturnList>
+        <ShippingTraceData>
+            <DocumentNumber>755000012345</DocumentNumber>
+            <Status>IsSignUp</Status>
+            <FromCity>深圳</FromCity>
+            <ToCity>广州市</ToCity>
+            <Shipper>安锐消防公司</Shipper>
+            <Consignee />
+            <ShippingMessage>
+                <ShippingTraceItem>
+                    <Time>2016-05-23T18:44:49.023</Time>
+                    <Message>新世纪快运 已收取卡航件</Message>
+                </ShippingTraceItem>
+                <ShippingTraceItem>
+                    <Time>2016-05-24T16:51:52.76</Time>
+                    <Message>您的卡航件已配发。</Message>
+                </ShippingTraceItem>
+                <ShippingTraceItem>
+                    <Time>2016-05-25T15:46:51.027</Time>
+                    <Message>卡航件 到达 广州市</Message>
+                </ShippingTraceItem>
+                <ShippingTraceItem>
+                    <Time>2016-05-25T15:47:02.89</Time>
+                    <Message>5-25 15:46罗R已签收，感谢使用新世纪快运，期待再次为您服务</Message>
+                </ShippingTraceItem>
+            </ShippingMessage>
+        </ShippingTraceData>
+    </ReturnList>
+    <RecordCount>1</RecordCount>
+</QueryResultOfShippingTraceData>

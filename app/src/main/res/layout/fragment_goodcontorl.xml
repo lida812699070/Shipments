@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/fr_goodscontorl_ll"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:id="@+id/ivToolbarDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:src="@drawable/down"/>
+
+        <EditText
+            android:id="@+id/etToolbarSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_bg_def"
+            android:drawableLeft="@drawable/search_dark"
+            android:drawablePadding="10dp"
+            android:hint="请输入单号"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/btnToolbarSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:text="搜索"
+            android:textColor="#9A9A9A"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swGoodsContorl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fr_goodscontorl_ll">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvGoodContorl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/popWindow"
+        android:layout_width="80dp"
+        android:visibility="invisible"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_goodscontorl_ll"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPopwindowWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="7天"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tvPopwindowMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="30天"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tvPopwindowMost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="45天"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/login_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:src="@drawable/ic_logo" />
+
+        <LinearLayout
+            android:id="@+id/login_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/login_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dip"
+                android:textColor="#ff0000"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dip"
+                android:layout_marginBottom="10dip">
+
+                <EditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="48dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="输入手机号"
+                    android:inputType="number"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dip"
+                android:layout_marginBottom="10dip"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etValifyCode"
+                    android:layout_width="0dp"
+                    android:layout_height="48dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bg"
+                    android:inputType="number"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnValifyCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取验证码" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dip"
+                android:layout_marginBottom="10dip"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_new_password"
+                    android:layout_width="0dp"
+                    android:layout_height="48dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dip"
+                android:layout_marginBottom="10dip"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_new_password2"
+                    android:layout_width="0dp"
+                    android:layout_height="48dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="确认密码"
+                    android:inputType="textPassword"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_RegisterUser"
+                android:layout_width="fill_parent"
+                android:layout_height="48dip"
+                android:background="@drawable/login_btn"
+                android:gravity="center"
+                android:text="注册"
+                android:textColor="#FFFFFF"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <TextView
+            android:visibility="gone"
+            android:onClick="back"
+            android:id="@+id/tv_login_versions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:text="返回"
+            android:textColor="#000"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

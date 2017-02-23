@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="48dip"
+    android:background="@color/toasterro"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/head_flip"
+        android:layout_width="54dip"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/flipper_head_title_wrapper_background"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_flipper_head_flip" 
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/head_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/head_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/flipper_head_title_wrapper_background"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_flipper_head_refresh" 
+        android:visibility="gone" />
+
+</RelativeLayout>

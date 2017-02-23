@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'lida53'
+            keyPassword 'lida53'
+            storeFile file('C:/Users/OK/xinshijifahuo.jks')
+            storePassword 'lida53'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.example.ok.shipments"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 5
+        versionName "1.0.4"
+    }
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.jiechic.library:xUtils:2.6.14'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile files('libs/soap.jar')
+    compile project(':library')
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.android.support:design:24.1.1'
+    compile files('libs/jpush-android-2.1.6.jar')
+    compile files('libs/core.jar')
+    compile files('libs/libammsdk.jar')
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile 'com.zhy:base-rvadapter:3.0.3'
+    compile 'com.wanjian:cockroach:0.0.5'
+}
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/rg_popwin_state_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rb_popwin_state_selector_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部" />
+        <RadioButton
+            android:id="@+id/rb_popwin_state_selector_no_assign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未分派" />
+
+        <RadioButton
+            android:id="@+id/rb_popwin_state_selector_no_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未完成" />
+
+        <RadioButton
+            android:id="@+id/rb_popwin_state_selector_finished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已完成" />
+
+
+    </RadioGroup>
+</LinearLayout>

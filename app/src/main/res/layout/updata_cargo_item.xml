@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_updata_productName"
+            style="@style/UpdataCargoInfosItemEt"
+            android:hint="品名"/>
+
+        <EditText
+            android:id="@+id/et_updata_qty"
+            style="@style/UpdataCargoInfosItemEt"
+            android:hint="件数"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/btn_updata_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="删除"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_updata_Length"
+            style="@style/UpdataCargoInfosItemEt"
+            android:hint="长度"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/et_updata_Width"
+            style="@style/UpdataCargoInfosItemEt"
+            android:hint="宽度"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/et_updata_height"
+            style="@style/UpdataCargoInfosItemEt"
+            android:hint="高度"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/et_updata_Volumn"
+            style="@style/UpdataCargoInfosItemEt"
+            android:hint="体积"
+            android:inputType="numberDecimal"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_updata_remarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="备注"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#ccc"></View>
+</LinearLayout>

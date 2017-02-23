@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+            <ScrollView
+                android:layout_marginBottom="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/main_receive_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:background="@drawable/ic_item_bg"
+                    android:orientation="vertical"
+                    android:padding="8dip"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/new_pickupBy"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dip"
+                        android:background="@drawable/edittext_bg"
+                        android:hint="@string/recivicePeople"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/new_deliveredBy"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dip"
+                        android:background="@drawable/edittext_bg"
+                        android:hint="@string/shipPeople"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:padding="8dip"
+                        android:text="@string/sendProple"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_selectSendPeople"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/login_btn"
+                        android:gravity="center"
+                        android:text="选择发件人"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dip"
+                    android:background="@drawable/ic_profile_header_divider" />
+
+                <LinearLayout
+
+                    android:id="@+id/ll_sendPeople"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:layout_weight="1"
+                        android:padding="8dip"
+                        android:text="@string/getPeople"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_selectGetPeople"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/login_btn"
+                        android:gravity="center"
+                        android:text="选择收件人"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dip"
+                    android:background="@drawable/ic_profile_header_divider" />
+
+                <LinearLayout
+                    android:id="@+id/ll_getPeople"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:padding="8dip"
+                    android:text="@string/goods"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dip"
+                    android:background="@drawable/ic_profile_header_divider" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:background="@drawable/ic_item_bg"
+                    android:orientation="horizontal"
+                    android:padding="8dip">
+
+
+                    <Spinner
+                        android:id="@+id/new_shipping_mode"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"></Spinner>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:padding="8dip"
+                    android:text="@string/goodsDetail"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dip"
+                    android:background="@drawable/ic_profile_header_divider" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:orientation="vertical"
+                    android:padding="8dip">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="品名："
+                            android:textColor="#000" />
+
+                        <EditText
+                            android:id="@+id/new_product_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dip"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="@string/goodsName"
+                            android:singleLine="true"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="件数："
+                            android:textColor="#000" />
+
+                        <EditText
+                            android:id="@+id/new_product_quantity"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dip"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="@string/qty"
+                            android:inputType="numberDecimal"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="重量："
+                            android:textColor="#000" />
+
+                        <EditText
+                            android:id="@+id/new_product_weight"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dip"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="@string/weight"
+                            android:inputType="numberDecimal"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="体积："
+                            android:textColor="#000" />
+
+                        <EditText
+                            android:id="@+id/new_product_volumn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dip"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="@string/vol"
+                            android:inputType="numberDecimal"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="声明价格："
+                            android:textColor="#000" />
+                        <EditText
+                            android:id="@+id/new_insuranceAmt"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dip"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_bg"
+                            android:hint="@string/price"
+                            android:inputType="numberDecimal"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="2dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/freight"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dip"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/new_needDelivery"
+                                android:layout_width="0dp"
+                                android:layout_height="40dip"
+                                android:layout_weight="2"
+                                android:checked="false"
+                                android:singleLine="true"
+                                android:text="@string/upDoor"
+                                android:textColor="#000" />
+
+                            <CheckBox
+                                android:id="@+id/new_needGOFloor"
+                                android:layout_width="0dp"
+                                android:layout_height="40dip"
+                                android:layout_weight="2"
+                                android:singleLine="true"
+                                android:text="@string/upfloor"
+                                android:textColor="#000" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/new_goodsControl"
+                                android:layout_width="0dp"
+                                android:layout_height="40dip"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:singleLine="true"
+                                android:text="@string/witerSend"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="40dip"
+                                android:layout_marginRight="8dip"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:text="@string/allPrice"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/new_total"
+                                android:layout_width="0dp"
+                                android:layout_height="40dip"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_bg"
+                                android:enabled="false"
+                                android:hint="@string/saveReturn"
+                                android:singleLine="true"
+                                android:textColor="#000"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            </ScrollView>
+        <Button
+            android:id="@+id/new_save_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/login_btn"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="#FFFFFF"
+            android:textSize="16.0sp" />
+    </RelativeLayout>
+
+</LinearLayout>

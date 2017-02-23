@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/unifiedorder_btn"
+        style="@style/MMLineActionButton"
+        android:layout_margin="10dp"
+        android:text="@string/unifiedorder_v3_wx" />
+    <Button
+        android:id="@+id/appay_pre_btn"
+        style="@style/MMLineActionButton"
+        android:layout_margin="10dp"
+        android:text="@string/pay__pre_by_wxap" />
+    <Button
+        android:id="@+id/appay_btn"
+        style="@style/MMLineActionButton"
+        android:layout_margin="10dp"
+        android:text="@string/pay_by_wxap" />
+
+</LinearLayout>

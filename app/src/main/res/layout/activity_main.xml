@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/main_fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/gr_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/home_rb_map"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/selector_home_map"
+            android:text="@string/shipment" />
+
+        <RadioButton
+            android:id="@+id/home_rb_query"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/selector_home_query"
+            android:text="@string/query" />
+
+        <RadioButton
+            android:id="@+id/home_rb_setting"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/selector_home_setting"
+            android:text="@string/setting" />
+
+        <RadioButton
+            android:id="@+id/home_rb_about"
+            style="@style/RadioButtonStyle"
+            android:drawableTop="@drawable/selector_home_query"
+            android:text="运单" />
+    </RadioGroup>
+</LinearLayout>

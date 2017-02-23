@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvQueryDocument"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="查询运单"
+        android:textColor="#3CC595"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:id="@+id/et_documentBynum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvQueryDocument"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="请输入单号"
+        android:textSize="20sp"/>
+
+    <ImageButton
+        android:id="@+id/iv_scanner"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/et_documentBynum"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_btn_scanner"
+        android:src="@mipmap/home_scan_button_normal"/>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_documentBynum">
+
+        <Button
+            android:id="@+id/btn_queryByNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="2"
+            android:background="@drawable/selector_btn"
+            android:text="查询"/>
+
+        <Button
+            android:id="@+id/btn_queryPicByNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn"
+            android:text="查看签收图"/>
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lv_fragmentByNum_msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll"
+        android:layout_marginTop="10dp"></ListView>
+</RelativeLayout>
