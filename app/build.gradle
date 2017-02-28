@@ -1,16 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'lida53'
-            keyPassword 'lida53'
-            storeFile file('C:/Users/OK/xinshijifahuo.jks')
-            storePassword 'lida53'
-        }
-    }
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
+
     defaultConfig {
         applicationId "com.example.ok.shipments"
         minSdkVersion 15
@@ -18,6 +11,16 @@ android {
         versionCode 5
         versionName "1.0.4"
     }
+    signingConfigs {
+        debugConfig {}
+        config {
+            keyAlias 'lida53'
+            keyPassword 'lida53'
+            storeFile file('C:/Users/OK/xinshijifahuo.jks')
+            storePassword 'lida53'
+        }
+    }
+
     buildTypes {
         release {
             debuggable false
@@ -31,6 +34,19 @@ android {
         main {
             jniLibs.srcDirs = ['libs']
         }
+    }
+
+    productFlavors {
+        xiaomi {}
+        qh360 {}
+        baidu {}
+        wandoujia {}
+        huawei {}
+        yingyongbao {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
 }
 
@@ -52,5 +68,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.0'
     compile 'com.zhy:base-rvadapter:3.0.3'
     compile 'com.wanjian:cockroach:0.0.5'
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }
 

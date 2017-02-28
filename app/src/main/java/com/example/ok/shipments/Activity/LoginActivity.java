@@ -47,6 +47,7 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.mining.app.zxing.EncodingHandler;
+import com.umeng.analytics.MobclickAgent;
 
 import java.io.ByteArrayInputStream;
 import java.util.HashSet;
@@ -439,6 +440,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void loginSuccess() {
+        MobclickAgent.onProfileSignIn(MyAppLocation.login.getUserId());
         showProgressDialog();
         String url = Urls.FindInProgressRequest;
         RequestParams params = new RequestParams();

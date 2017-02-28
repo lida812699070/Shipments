@@ -27,6 +27,7 @@ import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.List;
 import java.util.Timer;
@@ -40,6 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void Tos(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
+
 
     public void showProgressDialog() {
         if (isFinishing()) {
@@ -240,10 +242,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        MobclickAgent.onPause(this);
     }
 }
