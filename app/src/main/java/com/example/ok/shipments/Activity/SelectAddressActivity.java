@@ -34,7 +34,7 @@ import com.lidroid.xutils.http.RequestParams;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//选择地址界面
 public class SelectAddressActivity extends BaseActivity implements View.OnClickListener {
 
     public static final String ACTION = "com.example.ok.shipments.Activity.SelectAddressActivity.refreshdata";

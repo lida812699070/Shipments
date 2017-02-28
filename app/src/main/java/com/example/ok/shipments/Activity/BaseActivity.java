@@ -11,10 +11,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
-
 
 import com.example.ok.shipments.MyAppLocation;
 import com.example.ok.shipments.R;
@@ -30,8 +28,6 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public abstract class BaseActivity extends AppCompatActivity {

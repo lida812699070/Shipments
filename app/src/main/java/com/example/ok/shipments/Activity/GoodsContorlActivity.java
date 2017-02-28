@@ -43,7 +43,7 @@ import java.io.OutputStream;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
+//物控界面
 public class GoodsContorlActivity extends BaseActivity implements View.OnClickListener {
 
 

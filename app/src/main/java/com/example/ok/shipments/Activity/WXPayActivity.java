@@ -29,7 +29,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-
+//微信支付  后台暂无接口
 public class WXPayActivity extends AppCompatActivity {
 
     private PayReq req;

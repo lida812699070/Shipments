@@ -210,7 +210,7 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, O
             }
         }, 0, 2 * 60 * 1000);
     }
-
+    //获取位置  进行线路规划
     private void getDocumentLocation() {
         String url = Urls.GetRequestHandlerCoordinate;
         RequestParams params = new RequestParams();
@@ -387,7 +387,7 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, O
             finish();
         }
     }
-
+    //解析地址  获取坐标位置
     private void getBestLocaltion(final LatLng latLng1, String shipperStr) {
         //"http://api.map.baidu.com/place/v2/search?query=%E7%99%BE%E5%BA%A6%E5%A4%A7%E5%8E%A6&region=%E6%B7%B1%E5%9C%B3&city_limit=true&output=json&ak=sfuQIH09bvPcDELFp0vIkyQ0nGRd07Tw"
         //String url="http://api.map.baidu.com/place/v2/search";

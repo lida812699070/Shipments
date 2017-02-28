@@ -20,7 +20,7 @@ import com.example.ok.shipments.utils.CallBackString;
 import com.example.ok.shipments.utils.CommonUtil;
 import com.example.ok.shipments.utils.LogU;
 import com.lidroid.xutils.http.RequestParams;
-
+//修改用户信息
 public class UpDataInfoActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText etChange;

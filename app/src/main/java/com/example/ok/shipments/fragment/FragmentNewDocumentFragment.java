@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+//新增运单接口 等待接口
 public class FragmentNewDocumentFragment extends BaseFragment implements View.OnClickListener {
 
     public static final int SEND = 0x110;

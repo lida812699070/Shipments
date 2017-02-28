@@ -58,7 +58,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import cn.jpush.android.api.JPushInterface;
-
+//登录界面
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
@@ -86,6 +86,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //适配安卓6.0权限
         if (Build.VERSION.SDK_INT >= 23) {
             showContacts();
         } else {
@@ -247,7 +248,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onDestroy() {
         super.onDestroy();
     }
-
+    //登录接口
     private void login2() {
         username = etUsername.getText().toString();
         password = etPassword.getText().toString();
@@ -299,7 +300,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     }
                 });
     }
-
+    //获取当前服务器的版本号
     private void getCurrVersion() {
         showProgressDialog();
         final Login loginInfo = MyAppLocation.login;
@@ -378,7 +379,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         JPushInterface.onPause(this);
         super.onPause();
     }
-
+    //展示更新的对话康
     private void showUpdataVersion() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);  //先得到构造器
         builder.setTitle("检测到版本更新"); //设置标题
@@ -419,7 +420,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private static Boolean isExit = false;
-
+    //两秒内 连续两次返回键就退出app
     private void exitBy2Click() {
         Timer tExit = null;
         if (isExit == false) {
@@ -438,7 +439,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             System.exit(0);
         }
     }
-
+    //登录成功后  去查询用户现在是否有正在进行中的发货请求保存在全局变量  方便其他ACtivity的使用
     private void loginSuccess() {
         MobclickAgent.onProfileSignIn(MyAppLocation.login.getUserId());
         showProgressDialog();

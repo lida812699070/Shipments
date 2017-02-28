@@ -22,7 +22,7 @@ import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-
+//修改密码界面
 public class ChangePswActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText etOldPsw;

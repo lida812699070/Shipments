@@ -22,6 +22,7 @@ import com.lidroid.xutils.http.RequestParams;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+//货物详情  先保存数据 然后当发货请求结束后进行上传服务器
 
 public class UpdateCargoInfosActivity extends BaseActivity {
 

@@ -132,9 +132,11 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
         initTime();
         getLastUser();
         if (MyAppLocation.progressRequest != null) {
+            //根据是否有发货请求来显示不同的界面
             ll_cancelDocument.setVisibility(View.VISIBLE);
             canclecardView.setVisibility(View.VISIBLE);
             ll_send.setVisibility(View.GONE);
+
             if (!MyAppLocation.progressRequest.getStatus().equals("IsRequest")) {
                 timer = new Timer();
                 timer.schedule(new TimerTask() {
@@ -168,7 +170,7 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
             }
         });
     }
-
+    //通过坐标解析地址
     private void getAddress(final LatLng latLng) {
         String url = "http://api.map.baidu.com/geocoder/v2/?ak=sfuQIH09bvPcDELFp0vIkyQ0nGRd07Tw&callback=renderReverse&" +
                 "location=" + latLng.latitude + "," + latLng.longitude + "&output=xml&pois=1";
@@ -218,7 +220,7 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
             }
         });
     }
-
+    //获取订单的信息
     private void getDocumentLocation(String requestId) {
         String url = Urls.GetRequestHandlerCoordinate;
         RequestParams params = new RequestParams();
@@ -283,7 +285,7 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
                     }
                 });
     }
-
+    //获取距离
     private void getBestLocaltion(String shipperStr, final LatLng latLng) {
         String url = BaseSettings.plaseUrl + shipperStr + BaseSettings.plaseUrlParameter;
         MyAppLocation.mHttpUtils.send(HttpRequest.HttpMethod.POST,
@@ -330,13 +332,13 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
         double distance = DistanceUtil.getDistance(latLng, new LatLng(Double.valueOf(latitude), Double.valueOf(longitude)));
         tv_distance.setText("距离接货地点还有：" + new Double(distance).intValue() + "米");
     }
-
+    //进入地图
     private void inToMap() {
         Intent intent = new Intent(getActivity(), MapActivity.class);
         intent.putExtra("requestId", MyAppLocation.progressRequest.getRequestId());
         startActivity(intent);
     }
-
+    //超大  超重 尾班车等备注信息
     private void getMarkNames() {
         showProgressDialog();
         String url = Urls.GetMarkNames;
@@ -482,7 +484,9 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            //点击发货按钮
             case R.id.btn_shipOk:
+                //防止二次点击
                 if (OnClickutils.isFastDoubleClick()) {
                     return;
                 }
@@ -491,13 +495,16 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
             case R.id.etTimeSecond:
                 showTimePickerDialog();
                 break;*/
+
             case R.id.ll_shipment_UpdateCargoInfos:
+                //点击详情
                 Intent intent1 = new Intent(getActivity(), UpdateCargoInfosActivity.class);
                 if (UpdateCargoInfosActivity.getCargoInfos()!=null){
                     intent1.putExtra("data",UpdateCargoInfosActivity.getCargoInfos());
                 }
                 startActivity(intent1);
                 break;
+            //取消请求
             case R.id.btn_cancelDocument:
                 if (MyAppLocation.progressRequest == null) {
                     Tos("当前无订单");
@@ -529,9 +536,11 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
                 /*etCancelReason.setVisibility(View.VISIBLE);
                 btn_cancelDocumentOk.setVisibility(View.VISIBLE);*/
                 break;
+            //确认取消按钮
             case R.id.btn_cancelDocumentOk:
                 cancelDocument();
                 break;
+            //选择发件人按钮
             case R.id.tv_selectSendPeople:
                 Intent intent = new Intent(getActivity(), SelectAddressActivity.class);
                 intent.putExtra("IsSend", SHIP);

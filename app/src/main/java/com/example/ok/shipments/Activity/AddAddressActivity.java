@@ -18,7 +18,7 @@ import com.example.ok.shipments.utils.DialoginOkCallBack;
 import com.example.ok.shipments.utils.RetruenUtils;
 import com.example.ok.shipments.utils.StringXmlPaser;
 import com.lidroid.xutils.http.RequestParams;
-
+//选择地址的新增联系人界面
 public class AddAddressActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText etName;
@@ -77,10 +77,12 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            //点击定位进入地图进行选点
             case R.id.btn_location:
                 startActivityForResult(new Intent(this, GetLocationActivity.class), 0);
                 break;
             case R.id.btnSaveAddress:
+                //保存地址
                 saveAddress();
                 break;
             case R.id.head_flip:

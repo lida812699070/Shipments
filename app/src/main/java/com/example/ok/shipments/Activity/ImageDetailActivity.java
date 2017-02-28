@@ -26,7 +26,7 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 
 import java.util.ArrayList;
-
+//查看签收图界面  需要base64解码
 public class ImageDetailActivity extends BaseActivity {
 
     private ImageView ivPic;

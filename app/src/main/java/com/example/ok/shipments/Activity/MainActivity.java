@@ -22,7 +22,7 @@ import com.example.ok.shipments.utils.LogU;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
-
+//主界面  分为四个Fragment
 public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
@@ -66,6 +66,7 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.hide(currFragment);
+                //懒加载Fragment  防止刚进来的时候加载太多没必要的接口造成卡顿
                 switch (checkedId) {
                     case R.id.home_rb_map:
                         setCurrFragment(0, transaction);
@@ -122,17 +123,21 @@ public class MainActivity extends BaseActivity {
         if (fragment == null) {
             switch (index) {
                 case 0:
+                    //发货Fragment
                     fragment = new FragmentShipFragment();
                     break;
                 case 1:
+                    //查询
                     fragment = new FragmentAboutFragment();
                     fragments.put(1, fragment);
                     break;
                 case 2:
+                    //设置
                     fragment = new FragmentSettingFragment();
                     fragments.put(2, fragment);
                     break;
                 case 3:
+                    //运单
                     fragment = new FragemntDocumentFragment();
                     fragments.put(3, fragment);
                     break;
