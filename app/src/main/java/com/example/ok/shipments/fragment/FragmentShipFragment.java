@@ -2,13 +2,16 @@
 package com.example.ok.shipments.fragment;
 
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -73,6 +76,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+//发货界面   如果客户已经有运单了  那么就显示取消运单和进入地图界面控件
+//如果客户还没有运单  就显示发货的界面控件
 public class FragmentShipFragment extends BaseFragment implements View.OnClickListener {
 
     public static final int SHIP = 5;
@@ -151,7 +156,6 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
         }
     }
 
-
     private void getLastUser() {
         RequestParams params = new RequestParams();
         params.addBodyParameter("sessionId", MyAppLocation.login.getSessionId());
@@ -170,6 +174,7 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
             }
         });
     }
+
     //通过坐标解析地址
     private void getAddress(final LatLng latLng) {
         String url = "http://api.map.baidu.com/geocoder/v2/?ak=sfuQIH09bvPcDELFp0vIkyQ0nGRd07Tw&callback=renderReverse&" +
@@ -220,6 +225,7 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
             }
         });
     }
+
     //获取订单的信息
     private void getDocumentLocation(String requestId) {
         String url = Urls.GetRequestHandlerCoordinate;
@@ -285,6 +291,7 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
                     }
                 });
     }
+
     //获取距离
     private void getBestLocaltion(String shipperStr, final LatLng latLng) {
         String url = BaseSettings.plaseUrl + shipperStr + BaseSettings.plaseUrlParameter;
@@ -332,12 +339,15 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
         double distance = DistanceUtil.getDistance(latLng, new LatLng(Double.valueOf(latitude), Double.valueOf(longitude)));
         tv_distance.setText("距离接货地点还有：" + new Double(distance).intValue() + "米");
     }
+
     //进入地图
     private void inToMap() {
+
         Intent intent = new Intent(getActivity(), MapActivity.class);
         intent.putExtra("requestId", MyAppLocation.progressRequest.getRequestId());
         startActivity(intent);
     }
+
     //超大  超重 尾班车等备注信息
     private void getMarkNames() {
         showProgressDialog();
@@ -499,8 +509,8 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
             case R.id.ll_shipment_UpdateCargoInfos:
                 //点击详情
                 Intent intent1 = new Intent(getActivity(), UpdateCargoInfosActivity.class);
-                if (UpdateCargoInfosActivity.getCargoInfos()!=null){
-                    intent1.putExtra("data",UpdateCargoInfosActivity.getCargoInfos());
+                if (UpdateCargoInfosActivity.getCargoInfos() != null) {
+                    intent1.putExtra("data", UpdateCargoInfosActivity.getCargoInfos());
                 }
                 startActivity(intent1);
                 break;
@@ -699,7 +709,12 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
                             Tos("等待收货员接收请求");
                             return;
                         }
-                        inToMap();
+                        if (isOPen(getContext())) {
+                            LogU.e("已经开启gps");
+                            inToMap();
+                        } else {
+                            showInitGpsDialog();
+                        }
 
                     }
 
@@ -709,6 +724,52 @@ public class FragmentShipFragment extends BaseFragment implements View.OnClickLi
                         Tos(msg);
                     }
                 });
+    }
+
+    private void showInitGpsDialog() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+        dialog.setMessage("请打开GPS");
+        dialog.setPositiveButton("确定",
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                        // 转到手机设置界面，用户设置GPS
+                        Intent intent = new Intent(
+                                Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivityForResult(intent, 0); // 设置完成后返回到原来的界面
+
+                    }
+                });
+        dialog.setNeutralButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+                arg0.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    /**
+     * 判断GPS是否开启，GPS或者AGPS开启一个就认为是开启的
+     *
+     * @param context
+     * @return true 表示开启
+     */
+    public static final boolean isOPen(final Context context) {
+        LocationManager locationManager
+                = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        // 通过GPS卫星定位，定位级别可以精确到街（通过24颗卫星定位，在室外和空旷的地方定位准确、速度快）
+        boolean gps = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        // 通过WLAN或移动网络(3G/2G)确定的位置（也称作AGPS，辅助GPS定位。主要用于在室内或遮盖物（建筑群或茂密的深林等）密集的地方定位）
+        boolean network = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        if (gps || network) {
+            return true;
+        }
+
+        return false;
     }
 
     private void sendGoods() {

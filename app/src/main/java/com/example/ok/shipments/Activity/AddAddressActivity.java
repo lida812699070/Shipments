@@ -86,6 +86,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
                 saveAddress();
                 break;
             case R.id.head_flip:
+                //回退按钮  返回上一个界面
                 finish();
                 break;
         }
@@ -141,6 +142,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
 
     private String recordId = "";
 
+    //保存成功后提示用户是否要把这个地址设置成默认地址
     private void saveLastUser() {
         showDialog(new DialoginOkCallBack() {
             @Override
